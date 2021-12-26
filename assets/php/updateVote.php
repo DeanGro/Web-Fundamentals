@@ -28,7 +28,6 @@ if ($result->num_rows > 0) {
     echo '</div>';
 }
 
-// update vote
 if (isset($_POST['updateVote'])) {
     $sql = 'INSERT INTO vote (`votedUserId`, `votedHouseId`) VALUES ('. $toVoteUserId . ', ' . $_POST["id"] . ')';
     if (mysqli_query($connection, $sql)) {
