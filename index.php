@@ -6,15 +6,15 @@
     <script>
         const validateForm = () => {
             const form = document.forms['registerUser'];
-            // maybe loop all values instead?
+
             const firstName = form['firstName'].value;
             const lastName = form['lastName'].value;
             const age = form['age'].value;
             const interests = form['interests'].value;
             const telephone = form['telephone'].value;
-            if (!firstName && !lastName && !age && !interests && !telephone) {
-                // add CSS to specific labels
-                alert('all values are required');
+            if (!firstName || !lastName || !age || !interests || !telephone) {
+
+                alert('all fields are required');
                 return false;
             }
         }
@@ -23,12 +23,14 @@
 <body>
     <div class="container">
         <form name="registerUser" action="assets/php/createUser.php" onsubmit="return validateForm()"  method="post">
-            <div class="row align-items-center">
+            <div class="row align-items-center text-center">
                 <h1>Create Account</h1>
                 <label for="firstName">First name:</label><br>
                 <input type="text" id="firstName" name="firstName"><br>
                 <label for="lastName">Last name:</label><br>
                 <input type="text" id="lastName" name="lastName"><br>
+                <label for="gender">Gender:</label><br>
+                <input type="text" id="gender" name="gender"><br>
                 <label for="age">Age:</label><br>
                 <input type="text" id="age" name="age"><br>
                 <label for="interests">Interests:</label><br>

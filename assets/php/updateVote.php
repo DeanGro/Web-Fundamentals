@@ -11,7 +11,7 @@ LEFT JOIN vote ON vote.votedHouseId = house.id
 GROUP BY house.name, house.id';
 $result = $connection->query($sql);
 if ($result->num_rows > 0) {
-    echo '<div class="votes">';
+    echo '<div class="votes text-center">';
     while ($row = $result->fetch_assoc()) {
         if ($totalVotes) {
             $percentage = $row['votes']/$totalVotes*100;

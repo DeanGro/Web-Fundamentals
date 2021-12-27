@@ -5,7 +5,7 @@
     <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="container">
+<div class="container text-center">
 <?php
 include_once '../db/database.php';
 $activeUserId = $_GET['id'];
@@ -37,13 +37,21 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $toVoteUserId = $row['id'];
     ?>
-        <div class="user"><?php echo $row['firstName'] ?></div>
-        <div class="user"><?php echo $row['lastName'] ?></div>
-        <div class="user"><?php echo $row['age'] ?></div>
+        <div class="info">
+            <div class="user text-center"><?php echo $row['firstName'] ?></div>
+            <div class="user text-center"><?php echo $row['lastName'] ?></div>
+            <div class="user text-center"><?php echo $row['gender'] ?></div>
+            <div class="user text-center"><?php echo $row['age'] ?></div>
+            <div class="user text-center"><?php echo $row['interests'] ?></div>
+            <div class="user text-center"><?php echo $row['telephone'] ?></div>
+        </div>
+        <br>
     <?php
     $returnedUser = true;
 } else {
     echo 'you have voted on all users';
+    echo '<br>';
+    echo '<a href="../../index.php">Start again with another user</a>';
 }
 
 if ($returnedUser) {

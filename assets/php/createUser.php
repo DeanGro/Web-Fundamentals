@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-<div class="container">
+<div class="container text-center">
 <?php
 include_once '../db/database.php';
 
@@ -17,15 +17,16 @@ if (isset($_POST['submit'])) {
     // get user values
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
+    $gender = $_POST['gender'];
     $age = $_POST['age'];
     $interests = $_POST['interests'];
     $telephone = $_POST['telephone'];
 
     // add into user table
-    $sql = "INSERT INTO user (`firstName`, `lastName`, `age`, `interests`, `telephone`) 
-    VALUES ('$firstName', '$lastName', '$age', '$interests', '$telephone')";
+    $sql = "INSERT INTO user (`firstName`, `lastName`, `gender`, `age`, `interests`, `telephone`) 
+    VALUES ('$firstName', '$lastName', '$gender', '$age', '$interests', '$telephone')";
     if (mysqli_query($connection, $sql)) {
-        echo '<div class="row justify-content-center" style="display:block; height:300px;">New user has been added successfully!</div>';
+        echo '<div class="row justify-content-center">New user has been added successfully!</div>';
         $id = mysqli_insert_id($connection);
         echo '<div class="row text-center"><a href="/assets/php/getVote.php?id=' . $id . '"><input type="button" value="Vote on users"></a></div>';
     } else {

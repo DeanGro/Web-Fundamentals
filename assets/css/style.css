@@ -1,5 +1,39 @@
+body{
+    background-image: url('../img/background.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: repeat;
+    font-family: Amatic;
+    font-size:x-large;
+}
 .container {
     width: 20%;
     min-width: 320px;
-    background-color: coral;
+    background-color: #ff7f50;
+    margin-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    border-color: #ff4e0e;
+    border-width: 3px;
+    border-style: dotted;
+}
+@font-face {
+    font-family: Amatic;
+    src: url(AmaticSC-Regular.ttf);
+}
+input[type=submit], input[type=button] {
+    background-color: #ffb397;
+    color: black;
+    border-color: #ff9974;
+    border-width: 2px;
+    width: 100%;
+}
+.info, input[type=text]{
+    background-color: #fff7f5;
+    border-color: #ffe6dc;
+    border-width: 2px;
+    border-style: solid;
+}
+a, a:hover{
+    color:black;
 }
